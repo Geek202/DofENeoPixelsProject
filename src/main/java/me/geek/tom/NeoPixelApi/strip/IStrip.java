@@ -7,4 +7,5 @@ public interface IStrip {
     void draw();
     void setPixel(PixelColour colour, int pos) throws PixelPositionError;
     PixelColour mergeColour(PixelColour colour1, PixelColour colour2);
+    void clearStrip();
 }

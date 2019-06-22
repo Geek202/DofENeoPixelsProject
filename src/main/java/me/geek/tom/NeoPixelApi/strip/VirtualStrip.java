@@ -18,10 +18,7 @@ public class VirtualStrip implements IStrip {
 
     public VirtualStrip(int length) {
         this.length = length;
-        pixels = Lists.newArrayList();
-        for (int i  = 0; i < length; i++) {
-            pixels.add(new PixelColour(0, 0, 0));
-        }
+        clearStrip();
     }
 
     public void draw() {
@@ -44,5 +41,12 @@ public class VirtualStrip implements IStrip {
         int b = Math.min(colour1.getBlue() + colour2.getBlue(), 255);
 
         return new PixelColour(r, g, b);
+    }
+
+    public void clearStrip() {
+        pixels = Lists.newArrayList();
+        for (int i  = 0; i < length; i++) {
+            pixels.add(new PixelColour(0, 0, 0));
+        }
     }
 }

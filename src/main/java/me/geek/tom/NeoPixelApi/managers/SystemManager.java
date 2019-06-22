@@ -7,12 +7,27 @@ public class SystemManager implements IManager {
 
     private EmitterManager emitterManager;
     private ParticleManager particleManager;
+
+    public EmitterManager getEmitterManager() {
+        return emitterManager;
+    }
+
+    public ParticleManager getParticleManager() {
+        return particleManager;
+    }
+
+    public StripManager getStripManager() {
+        return stripManager;
+    }
+
+    private StripManager stripManager;
     private Timer timer;
     private final int FPS = 20;
 
     public SystemManager() {
         emitterManager = new EmitterManager();
         particleManager = new ParticleManager();
+        stripManager = new StripManager();
         timer = new Timer();
     }
 
